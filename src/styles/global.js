@@ -8,16 +8,18 @@ export default createGlobalStyle`
     box-sizing: border-box;
 }
 //Desktop Landscape(Paisagem)
-//@media only screen and (min-width: 800px){
     html{
     font-family: "Oswald", sans-serif;
     font-size: 86.25%;
     }
 
     body {
-        
-    zoom: 67%;
-
+        @media only screen and (max-width: 1280px){
+            zoom: 67%;
+            overflow-y: hidden;
+        }
+            zoom: 85%;
+            overflow-y: hidden;
     }
 
     a {
@@ -47,18 +49,32 @@ export default createGlobalStyle`
     }
 
     .backgroundcover {
+    @media only screen and (max-width: 1280px){
         background: #eee;
-        min-height: 140vh;
+        min-height: 100vh;
+    }
+        background: #eee;
+        min-height: 110vh;
     }
 
     .bgpng {
+        @media only screen and (max-width: 1280px){
+            position: absolute;
+            width: 100%;
+            height: 100%;    
+        }
         position: absolute;
-        width: 148vw;
+        width: 100%;
+        height: 100%;
         
     }
 
     .dashboard {
-        margin-top: -30px;
+        @media only screen and (max-width: 1280px){
+            margin-top: 300px;
+            margin-left: -10px;
+        }
+        margin-top: 40px;
         margin-left: -10px;
         
     }
@@ -266,13 +282,83 @@ export default createGlobalStyle`
     
 
     .menu-title {
+        @media only screen and (max-width: 1280px){
         position: absolute;
-        margin-top: -700px;
-        margin-left: 900px;
+        top: 40%;
+        left: 40%;
+        font-size: 25px;
+        }
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        font-size: 25px;
+    }
+
+    .menu-title.login {
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        top: 32%;
+        left: 32%;
+        font-size: 25px;
+        }
+        position: absolute;
+        top: 35%;
+        left: 37.5%;
+        font-size: 25px;
+    }
+
+    .menu-title.menu {
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        top: 40%;
+        left: 30%;
+        font-size: 25px;
+        }
+        position: absolute;
+        top: 35%;
+        left: 27%;
+        font-size: 25px;
+    }
+
+    .menu-title.cadastro {
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        font-size: 25px;
+        }
+        position: absolute;
+        top: 15%;
+        left: 55%;
+        font-size: 25px;
+    }
+
+    .menu-title.controle {
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        font-size: 25px;
+        }
+        position: absolute;
+        top: 25%;
+        left: 30%;
         font-size: 25px;
     }
 
     .option-col {
+        @media only screen and (max-width: 1280px){
+            position: absolute;
+            width: 350px;
+            height: 250px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 40%;
+            left: 48%; 
+        }
         position: absolute;
         width: 350px;
         height: 250px;
@@ -281,11 +367,24 @@ export default createGlobalStyle`
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        margin-top: -500px;
-        margin-left: 850px;
+        top: 40%;
+        left: 45%;
     }
 
     .option-vac {
+        @media only screen and (max-width: 1280px){
+            position: absolute;
+            width: 350px;
+            height: 250px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 40%;
+            left: 68%;
+        }
+
         position: absolute;
         width: 350px;
         height: 250px;
@@ -294,8 +393,8 @@ export default createGlobalStyle`
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        margin-top: -500px;
-        margin-left: 1250px;
+        top: 40%;
+        left: 65%;
     }
 
     .menu-button {
@@ -313,6 +412,20 @@ export default createGlobalStyle`
     }
 
     .form-controle{
+        @media only screen and (max-width: 1280px){
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(6, 150px);
+            width: 900px;
+            height: 600px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 25%;
+            left: 43.3%; 
+        }
         position: absolute;
         display: grid;
         grid-template-columns: repeat(6, 150px);
@@ -323,8 +436,8 @@ export default createGlobalStyle`
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        margin-top: -750px;
-        margin-left: 880px;
+        top: 19%;
+        left: 43.3%;
        
     }
     
@@ -358,6 +471,19 @@ export default createGlobalStyle`
 
         }
 
+        .form-checkbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 280px;
+            border: none;
+            margin-left: -140px;
+            margin-right: auto;
+            margin-top: 70px;
+    
+            }
+
     .form-button{
         display: flex;
         justify-content: center;
@@ -390,6 +516,7 @@ export default createGlobalStyle`
     }
 
     .cadastro-colaborador{
+        @media only screen and (max-width: 1280px){
         position: absolute;
         display: grid;
         grid-template-columns: repeat(4, 4fr);
@@ -402,6 +529,48 @@ export default createGlobalStyle`
         border-radius: 25px;
         margin-top: -730px;
         margin-left: 1030px;
+        }
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+        width: 400px;
+        height: 500px;
+        background: #fff;
+        border: 1px solid #006432;
+        box-sizing: border-box;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        top: 115%;
+        left: -5%;
+    }
+
+    .cadastro-colaborador.login{
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+        width: 400px;
+        height: 500px;
+        background: #fff;
+        border: 1px solid #006432;
+        box-sizing: border-box;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        top: 105%;
+        left: -5%;
+        }
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+        width: 400px;
+        height: 500px;
+        background: #fff;
+        border: 1px solid #006432;
+        box-sizing: border-box;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        top: 28%;
+        left: 46%;
     }
 
     .setError {
@@ -482,6 +651,7 @@ export default createGlobalStyle`
     }
 
     .cad-colaborador{
+        @media only screen and (max-width: 1280px){
         position: absolute;
         display: grid;
         grid-template-columns: repeat(6, 150px);
@@ -492,8 +662,21 @@ export default createGlobalStyle`
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        margin-top: -600px;
-        margin-left: 880px;
+        top: 28%;
+        left: 43%;
+        }
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(6, 150px);
+        width: 900px;
+        height: 500px;
+        background: #fff;
+        border: 1px solid #006432;
+        box-sizing: border-box;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        top: 28%;
+        left: 45%;
     }
 
     .cad-label {

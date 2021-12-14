@@ -49,11 +49,24 @@ export const MSubtitle = styled.h1`
 `;
 
 export const Footer = styled.footer`
+@media only screen and (max-width: 1280px){
+  position: absolute;
   text-align: center;
+  font-size: 25px;
   padding: 1rem 0 1rem;
-  color: #333;
+  color: #fff;
   opacity: 0.6;
-  margin-top: -5rem;
+  top: 94%;
+  left: 43%;
+}
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  padding: 1rem 0 1rem;
+  color: #fff;
+  opacity: 0.6;
+  top: 94%;
+  left: 43%;
 `;
 
 export const CardTitle = styled.h2`

@@ -1,11 +1,12 @@
 import React from 'react';
 import { MenuSubtitle, MSubtitle } from '../../styles/app';
 import { Link } from 'react-router-dom';
+// import '../../styles/global'
 
 export default function Menu(){
   return(
     <>
-      <div className="menu-title">
+      <div className="menu-title menu">
         <MSubtitle>Bem-Vindos ao Vacinômetro Flex</MSubtitle>
       </div>
       <Colaborador />

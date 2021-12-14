@@ -15,7 +15,7 @@ function sleep(delay = 0) {
 export default function Colaborador() {
   return (
     <>
-      <div className="menu-title">
+      <div className="menu-title cadastro">
         <MSubtitle>Cadastro de Colaborador</MSubtitle>
       </div>
       <FormCadastro />

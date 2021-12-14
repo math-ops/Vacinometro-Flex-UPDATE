@@ -67,7 +67,8 @@ export default function Vacineflex() {
 
 
     return (
-        <>
+        <>  
+        <div className='dashboard'>
             <TotalVacinados colaboradoresVacinados={colaboradoresVacinados} />
             <Elegiveis colaboradores_elegiveis={colaboradores_elegiveis} />
             <First total_primeira_dose={total_primeira_dose} />
@@ -75,6 +76,7 @@ export default function Vacineflex() {
             <Unic total_dose_unica={total_dose_unica} />
             <Alimentos total_alimentos_arrecadados={total_alimentos_arrecadados} />
             <Porcentagem valorPercentual={valorPercentual} />
+            </div>
         </>
     )
 }

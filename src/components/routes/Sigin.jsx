@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 export default function Sigin() {
   return (
     <>
-      <div className="menu-title">
+      <div className="menu-title login">
         <OptionSubtitle>Vacinômetro Flex - Login</OptionSubtitle>
       </div>
       <FormLogin />
@@ -48,7 +48,7 @@ export function FormLogin() {
 
   return (
     <>
-      <div className="cadastro-colaborador">
+      <div className="cadastro-colaborador login">
         <div className="form-login">
           <form  onSubmit={(e) => handleSubmit(e.preventDefault())}>
             <label className="login-label">Username</label>

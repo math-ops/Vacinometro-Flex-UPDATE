@@ -4,6 +4,9 @@ import { OptionSubtitle } from '../../styles/app'
 import axios from '../../services/api';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Checkbox from '@material-ui/core/Checkbox'
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import moment from 'moment';
 moment.locale('pt-br');
 
@@ -19,7 +22,7 @@ export default function Controle() {
 
   return (
     <>
-      <div className="menu-title">
+      <div className="menu-title controle">
         <OptionSubtitle>Controle de Colaboradores Vacinados</OptionSubtitle>
       </div>
       <FormControle />
@@ -272,6 +275,8 @@ export function FormControle() {
 
   }
 
+  const label = { inputProps: {'aria-label': 'Checkbox demo'}};
+
   return (
     <>
       <form onSubmit={(e) => handleUpdateColaborador(e.preventDefault())}>
@@ -367,10 +372,13 @@ export function FormControle() {
           <input className="form-input" type="text" name="" id="" placeholder="Status" value={statusVacina} onChange={(e) => setStatusVacina(e.target.value)} />
 
           <label className='form-label'>Situação do Colaborador</label>
-          <select className='form-input'>
+          {/* <select className='form-input'>
             <option value="true">Ativo</option>
             <option value="false">Desligado</option>
-          </select>
+          </select> */}
+            <FormGroup className="form-checkbox">
+              <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Ativo"/>
+            </FormGroup>
 
           <div>
             <button className="form-button" onClick={(e) => handleUpdateColaborador(e.preventDefault())}>atualizar</button>
