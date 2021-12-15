@@ -197,7 +197,7 @@ export default createGlobalStyle`
         text-align: center;
         color: #fff;
         margin-top: 10px;
-        margin-left: 105px;
+        left: 25%;
 
     }
 
@@ -249,7 +249,7 @@ export default createGlobalStyle`
         text-align: center;
         color: #fff;
         margin-top: 10px;
-        margin-left: 20px;
+        left: 20%;
 
     }
 
@@ -275,7 +275,7 @@ export default createGlobalStyle`
         text-align: center;
         color: #fff;
         margin-top: 10px;
-        margin-left: 50px;
+        left: 25%;
 
     }
 
@@ -464,7 +464,7 @@ export default createGlobalStyle`
         background: #f0f0f0;
         border: none;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
+        padding: 10px;
         margin-left: -140px;
         margin-right: auto;
         margin-top: 70px;
@@ -618,11 +618,11 @@ export default createGlobalStyle`
         align-items: center;
         height: 50px;
         width: 280px;
+        padding: 10px;
         border-radius: 10px;
         background: #f0f0f0;
         border: none;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
         margin-left: 65px;
         margin-right: auto;
         margin-top: 20px;
@@ -699,7 +699,7 @@ export default createGlobalStyle`
         background: #f0f0f0;
         border: none;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
+        padding: 10px;
         margin-left: -140px;
         margin-right: auto;
         margin-top: 80px;
@@ -734,6 +734,7 @@ export default createGlobalStyle`
     input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
         color: #fff;
         position: relative;
+        left: 10px;
       }
       
       input[type="date"]::-webkit-datetime-edit-year-field{
@@ -762,8 +763,16 @@ export default createGlobalStyle`
       }
 
       .sucesso-control{
+           @media only screen and (max-width: 1280px){
+            position: absolute;
+            top: 80%;
+            left: 650px;
+            font-weight: 500;
+            font-size: 20px;
+            color: #0010c4; 
+           }
         position: absolute;
-        margin-top: 500px;
+        top: 79%;
         margin-left: 650px;
         font-weight: 500;
         font-size: 20px;
@@ -772,8 +781,16 @@ export default createGlobalStyle`
       }
 
       .error-control{
+           @media only screen and (max-width: 1280px){
+            position: absolute;
+            top: 80%;
+            left: 650px;
+            font-weight: 500;
+            font-size: 20px;
+            color: #ff0000;
+           }
         position: absolute;
-        margin-top: 500px;
+        top: 79%;
         margin-left: 650px;
         font-weight: 500;
         font-size: 20px;

@@ -28,6 +28,7 @@ export function FormCadastro() {
   const history = useHistory();
 
   const [colaborador, setColaborador] = useState([]);
+  // eslint-disable-next-line
   const [cargoFilter, setCargoFilter] = useState([]);
 
   const [nome, setNome] = useState('');
@@ -78,7 +79,7 @@ export function FormCadastro() {
     })();
 
     setIsUpdate(false);
-
+// eslint-disable-next-line
   }, [isUpdate]);
 
   useEffect(() => {

@@ -85,7 +85,6 @@ function Navbar() {
               <Link to="/sigin" className={classes.link}>
                 LogIn
               </Link>
-
           }
         </div>
       </Toolbar>

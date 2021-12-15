@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useState } from 'react';
 import api from '../services/api';
 import moment from 'moment';
 moment.locale('pt-br');
