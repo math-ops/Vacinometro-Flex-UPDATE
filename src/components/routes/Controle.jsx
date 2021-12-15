@@ -57,6 +57,7 @@ export function FormControle() {
   const [statusPrimeiraDose, setStatusPrimeiraDose] = useState('');
   const [statusSegundaDose, setStatusSegundaDose] = useState('');
   const [statusVacina, setStatusVacina] = useState('');
+  const [ativo, setAtivo] = useState(true);
 
   const [msgSucess, setMsgSucess] = useState('');
   const [msgFail, setMsgFail] = useState('');
@@ -98,9 +99,8 @@ export function FormControle() {
       try {
 
         if (!!idcolaborador) {
-
-          console.log('atualiza');
           const request = await axios.get(`colaborador/${idcolaborador}`);
+
           const {
             id,
             id_empresa,
@@ -111,7 +111,8 @@ export function FormControle() {
             dt_agendamento,
             nm_status_primeira_dose,
             nm_status_segunda_dose,
-            status
+            status,
+            in_ativo
           } = request.data[0];
 
           console.log(request.data[0]);
@@ -126,6 +127,7 @@ export function FormControle() {
           setStatusPrimeiraDose(nm_status_primeira_dose);
           setStatusSegundaDose(nm_status_segunda_dose);
           setStatusVacina(status);
+          setAtivo(in_ativo);
 
         } else {
 
@@ -138,6 +140,7 @@ export function FormControle() {
           setStatusSegundaDose('');
           setDtAgendamento('');
           setStatusVacina('');
+          setAtivo(false);
 
         }
 
@@ -180,6 +183,7 @@ export function FormControle() {
       setDtSegundaDose(formatData(dtSegundaDose));
       setDtAgendamento(formatData(dtAgendamento));
       setStatusVacina(statusVacina);
+      setAtivo(ativo);
 
     } catch (error) {
       try {
@@ -211,7 +215,8 @@ export function FormControle() {
       nm_status_primeira_dose: validaDadosText(statusPrimeiraDose),
       nm_status_segunda_dose: validaDadosText(statusSegundaDose),
       dt_agendamento: validaDadosDate(dtAgendamento),
-      nm_status: validaDadosText(statusVacina)
+      nm_status: validaDadosText(statusVacina),
+      in_ativo: ativo
     }
 
     const request = await axios.put('/vacinometro', {
@@ -225,7 +230,8 @@ export function FormControle() {
       dt_segunda_dose: vacinometro.dt_segunda_dose,
       nm_status_segunda_dose: vacinometro.nm_status_segunda_dose,
       dt_agendamento: vacinometro.dt_agendamento,
-      status: vacinometro.nm_status
+      status: vacinometro.nm_status,
+      in_ativo: vacinometro.in_ativo
     }).then((res) => {
       setMsgSucess('Cadastro ralizado com sucesso!');
       setMsgFail('');
@@ -233,8 +239,7 @@ export function FormControle() {
     }).catch((error) => {
       setMsgFail(error.request.responseText);
       setMsgSucess('');
-      console.log(error.request.responseText);
-    }).finally(()=>{
+    }).finally(() => {
       console.log(vacinometro);
     })
 
@@ -272,10 +277,11 @@ export function FormControle() {
     setStatusSegundaDose('');
     setDtAgendamento('');
     setStatusVacina('');
+    setAtivo(false);
 
   }
 
-  const label = { inputProps: {'aria-label': 'Checkbox demo'}};
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   return (
     <>
@@ -350,9 +356,6 @@ export function FormControle() {
           <label className="form-label">Primeira Dose</label>
           <input className="form-input" type="date" name="" id="" placeholder="1º Dose" value={dtPrimeiraDose} onChange={(e) => setDtPrimeiraDose(formatDataCalendar(e.target.valueAsDate))} />
 
-          {/* <label className="form-label">Status 1ª Dose</label>
-          <input className="form-input" type="text" name="" id="" placeholder="Status Primeira Dose" value={statusPrimeiraDose} onChange={(e) => setStatusPrimeiraDose(e.target.value)} /> */}
-
           <label className="form-label">Dose Única</label>
           <select className="form-input" type="text" name="" id="" placeholder="Status Primeira Dose" value={statusPrimeiraDose} onChange={(e) => setStatusPrimeiraDose(e.target.value)} >
             <option value="NAO">NÃO</option>
@@ -372,13 +375,10 @@ export function FormControle() {
           <input className="form-input" type="text" name="" id="" placeholder="Status" value={statusVacina} onChange={(e) => setStatusVacina(e.target.value)} />
 
           <label className='form-label'>Situação do Colaborador</label>
-          {/* <select className='form-input'>
-            <option value="true">Ativo</option>
-            <option value="false">Desligado</option>
-          </select> */}
-            <FormGroup className="form-checkbox">
-              <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Ativo"/>
-            </FormGroup>
+
+          <FormGroup className="form-checkbox">
+            <FormControlLabel control={<Checkbox color="success" checked={ativo} onChange={(e) => setAtivo(!ativo)} />} label="Ativo" />
+          </FormGroup>
 
           <div>
             <button className="form-button" onClick={(e) => handleUpdateColaborador(e.preventDefault())}>atualizar</button>
