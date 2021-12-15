@@ -90,7 +90,7 @@ export function FormControle() {
     return () => {
       setAtualizaEmpresa(false);
     };
-
+// eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -159,7 +159,7 @@ export function FormControle() {
       }
 
     })();
-
+// eslint-disable-next-line
   }, [atualizaEmpresa])
 
   async function handleBuscarColaborador() {
@@ -218,7 +218,7 @@ export function FormControle() {
       nm_status: validaDadosText(statusVacina),
       in_ativo: ativo
     }
-
+// eslint-disable-next-line
     const request = await axios.put('/vacinometro', {
       id: vacinometro.id,
       id_empresa: vacinometro.id_empresa,
@@ -388,7 +388,7 @@ export function FormControle() {
           <strong className="error-control">{msgFail}</strong>
 
         </div>
-      </form>)
+      </form>
 
     </>
   )
