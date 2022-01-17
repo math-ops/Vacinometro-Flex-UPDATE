@@ -102,12 +102,26 @@ export const MenuSubtitle = styled.h2`
 `;
 
 export const OptionSubtitle = styled.h2`
+@media only screen and (max-width: 1280px){
+  position: fixed;
   text-align: center;
-  font-size: 45px;
-  padding: 1rem 0 1rem;
+  font-size: 35px;
+  padding: 25px 60px 25px 59px;
+  background-color: #fff;
+  border: solid 1px #009add;
   color: #000;
-  margin-top: -150px;
-  margin-left: 100px;
-  margin-right: 20px;
+  margin-top: -169px;
+  margin-left: 29px;
+}
+      position: fixed;
+      text-align: center;
+      font-size: 25px;
+      padding: 25px 170px 25px 122px;
+      background-color: #fff;
+      border: solid 1px #009add;
+      color: #000;
+      margin-top: -169px;
+      margin-left: 29px;
+  
 
 `;

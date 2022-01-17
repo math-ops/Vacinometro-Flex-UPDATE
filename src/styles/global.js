@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 
@@ -15,11 +15,15 @@ export default createGlobalStyle`
 
     body {
         @media only screen and (max-width: 1280px){
-            zoom: 67%;
-            overflow-y: hidden;
+        zoom: 67%;
+        overflow-y: hidden;
         }
-            zoom: 85%;
-            overflow-y: hidden;
+            @media only screen and (max-width: 1366px){
+            zoom: 67%;
+            overflow-y: hidden; 
+        }
+                zoom: 85%;
+                overflow-y: hidden;
     }
 
     a {
@@ -49,34 +53,33 @@ export default createGlobalStyle`
     }
 
     .backgroundcover {
-    @media only screen and (max-width: 1280px){
+        @media only screen and (max-width: 1280px){
         background: #eee;
         min-height: 100vh;
-    }
-        background: #eee;
-        min-height: 110vh;
+        }
+            background: #eee;
+            min-height: 110vh;
     }
 
     .bgpng {
         @media only screen and (max-width: 1280px){
-            position: absolute;
-            width: 100%;
-            height: 100%;    
-        }
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 100%;    
+        }
+            position: absolute;
+            width: 100%;
+            height: 100%;
         
     }
 
     .dashboard {
-        @media only screen and (max-width: 1280px){
-            margin-top: 300px;
-            margin-left: -10px;
+        @media only screen and (max-width: 1366px){
+        margin-top: 320px;
+        margin-left: -20px;
         }
-        margin-top: 40px;
-        margin-left: -10px;
-        
+            margin-top: 40px;
+            margin-left: -10px;        
     }
 
     .colaborador {
@@ -120,7 +123,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-left: 730px;
         margin-top: -110px;
-
     }
 
     .elegiveis {
@@ -146,7 +148,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         margin-left: 85px;
-
     }
 
     .dose-um {
@@ -172,7 +173,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         margin-left: 85px;
-
     }
 
     .dose-dois {
@@ -198,7 +198,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         left: 25%;
-
     }
 
     .unica {
@@ -224,7 +223,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         margin-left: 105px;
-
     }
 
     .alimentos {
@@ -250,7 +248,6 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         left: 20%;
-
     }
 
     .porcento {
@@ -276,10 +273,8 @@ export default createGlobalStyle`
         color: #fff;
         margin-top: 10px;
         left: 25%;
-
     }
-
-    
+   
 
     .menu-title {
         @media only screen and (max-width: 1280px){
@@ -288,10 +283,10 @@ export default createGlobalStyle`
         left: 40%;
         font-size: 25px;
         }
-        position: absolute;
-        top: 35%;
-        left: 45%;
-        font-size: 25px;
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            font-size: 25px;
     }
 
     .menu-title.login {
@@ -301,10 +296,10 @@ export default createGlobalStyle`
         left: 32%;
         font-size: 25px;
         }
-        position: absolute;
-        top: 35%;
-        left: 37.5%;
-        font-size: 25px;
+            position: absolute;
+            top: 35%;
+            left: 37.5%;
+            font-size: 25px;
     }
 
     .menu-title.menu {
@@ -314,10 +309,10 @@ export default createGlobalStyle`
         left: 30%;
         font-size: 25px;
         }
-        position: absolute;
-        top: 35%;
-        left: 27%;
-        font-size: 25px;
+            position: absolute;
+            top: 35%;
+            left: 27%;
+            font-size: 25px;
     }
 
     .menu-title.cadastro {
@@ -327,38 +322,29 @@ export default createGlobalStyle`
         left: 50%;
         font-size: 25px;
         }
-        position: absolute;
-        top: 15%;
-        left: 55%;
-        font-size: 25px;
+            position: absolute;
+            top: 15%;
+            left: 55%;
+            font-size: 25px;
     }
 
     .menu-title.controle {
         @media only screen and (max-width: 1280px){
         position: absolute;
-        top: 30%;
-        left: 30%;
-        font-size: 25px;
-        }
-        position: absolute;
         top: 25%;
-        left: 30%;
+        left: 47%;
         font-size: 25px;
+        z-index: 9999;
+        }
+            position: absolute;
+            top: 25%;
+            left: 46.9%;
+            font-size: 25px;            
+            z-index: 9999;
     }
 
     .option-col {
         @media only screen and (max-width: 1280px){
-            position: absolute;
-            width: 350px;
-            height: 250px;
-            background: #fff;
-            border: 1px solid #006432;
-            box-sizing: border-box;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-            top: 40%;
-            left: 48%; 
-        }
         position: absolute;
         width: 350px;
         height: 250px;
@@ -368,23 +354,22 @@ export default createGlobalStyle`
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         top: 40%;
-        left: 45%;
+        left: 48%; 
+        }
+            position: absolute;
+            width: 350px;
+            height: 250px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 40%;
+            left: 45%;
     }
 
     .option-vac {
         @media only screen and (max-width: 1280px){
-            position: absolute;
-            width: 350px;
-            height: 250px;
-            background: #fff;
-            border: 1px solid #006432;
-            box-sizing: border-box;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-            top: 40%;
-            left: 68%;
-        }
-
         position: absolute;
         width: 350px;
         height: 250px;
@@ -394,7 +379,18 @@ export default createGlobalStyle`
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         top: 40%;
-        left: 65%;
+        left: 68%;
+        }
+            position: absolute;
+            width: 350px;
+            height: 250px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 40%;
+            left: 65%;
     }
 
     .menu-button {
@@ -413,19 +409,6 @@ export default createGlobalStyle`
 
     .form-controle{
         @media only screen and (max-width: 1280px){
-            position: absolute;
-            display: grid;
-            grid-template-columns: repeat(6, 150px);
-            width: 900px;
-            height: 600px;
-            background: #fff;
-            border: 1px solid #006432;
-            box-sizing: border-box;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-            top: 25%;
-            left: 43.3%; 
-        }
         position: absolute;
         display: grid;
         grid-template-columns: repeat(6, 150px);
@@ -436,62 +419,146 @@ export default createGlobalStyle`
         box-sizing: border-box;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        top: 19%;
-        left: 43.3%;
-       
+        top: 25%;
+        left: 43.3%; 
+        }
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(6, 150px);
+            width: 900px;
+            height: 600px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 19%;
+            left: 43.3%;       
+    }
+
+    .form-controle-colab{
+        @media only screen and (max-width: 1280px){
+        position: absolute;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 41%;
+        height: 140vh;
+        background: rgba(255,255,255, 0.9);
+        border: 1px solid #006432;
+        box-sizing: border-box;
+        box-shadow: -4px 0 0 rgba(0, 0, 0, 0.25);
+        top: 5%;
+        left: 59%;
+        }
+            position: absolute;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 41%;
+            height: 100%;
+            background: rgba(255,255,255, 0.8);
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: -4px 0 0 rgba(0, 0, 0, 0.25);
+            top: 6.8%;
+            left: 59%; 
+    }
+
+    .form-box{
+        @media only screen and (max-width: 1280px){
+            position: absolute;
+            top: 10%;
+            left: 2%; 
+        }
+                position: absolute;
+                top: 6%;
+                left: 2%;
     }
     
     .form-label{
-        display: inline-flex;
-        justify-content: left;
-        align-items: left;
-        width: 350px;
-        height: 10px;
-        font-size: 25px;
-        margin-left: 10px;
-        margin-right: 100px;
-        margin-top: 20px;
+        @media only screen and (max-width: 1280px){
+            display: inline-flex;
+            justify-content: left;
+            align-items: left;
+            width: 350px;
+            height: 10px;
+            font-size: 25px;
+            margin-left: 20px;
+            margin-top: 5%;
+    
+        }
+                display: inline-flex;
+                justify-content: left;
+                align-items: left;
+                width: 350px;
+                height: 10px;
+                font-size: 25px;
+                margin-left: 20px;
+                margin-top: 4%;
+
 
     }
 
     .form-input{
+        @media only screen and (max-width: 1280px){
         display: flex;
         justify-content: center;
         align-items: center;
         height: 50px;
-        width: 280px;
+        width: 450px;
         border-radius: 10px;
         background: #f0f0f0;
         border: none;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         padding: 10px;
-        margin-left: -140px;
+        margin-left: 20px;
         margin-right: auto;
-        margin-top: 70px;
-
+        margin-top: 30px;
         }
-
-        .form-checkbox{
             display: flex;
             justify-content: center;
             align-items: center;
             height: 50px;
-            width: 280px;
+            width: 450px;
+            border-radius: 10px;
+            background: #f0f0f0;
             border: none;
-            margin-left: -140px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            margin-left: 20px;
             margin-right: auto;
-            margin-top: 70px;
-    
-            }
+            margin-top: 10px;
+    }
+
+    .form-checkbox{
+        @media only screen and (max-width: 1280px){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100px;
+            border: none;
+            margin-left: 20px;
+            margin-right: auto; 
+        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin-left: 20px;
+    margin-right: auto;    
+    }
 
     .form-button{
-        display: flex;
+        @media only screen and (max-width: 1280px){
+            display: flex;
         justify-content: center;
         align-items: center;
         color: #fff;
         font-size: 20px;
         height: 50px;
-        width: 280px;
+        width: 700px;
         border-radius: 10px;
         background: #82bc00;
         border: #006432;
@@ -499,7 +566,26 @@ export default createGlobalStyle`
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         margin-left: 10px;
         margin-right: auto;
-        margin-top: 70px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 20px;
+        height: 50px;
+        width: 700px;
+        border-radius: 10px;
+        background: #82bc00;
+        border: #006432;
+        cursor: pointer;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        margin-left: 10px;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 20px;
 
     }
 
@@ -530,47 +616,47 @@ export default createGlobalStyle`
         margin-top: -730px;
         margin-left: 1030px;
         }
-        position: absolute;
-        display: grid;
-        grid-template-columns: repeat(4, 4fr);
-        width: 400px;
-        height: 500px;
-        background: #fff;
-        border: 1px solid #006432;
-        box-sizing: border-box;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 25px;
-        top: 115%;
-        left: -5%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(4, 4fr);
+            width: 400px;
+            height: 500px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 115%;
+            left: -5%;
     }
 
     .cadastro-colaborador.login{
-        @media only screen and (max-width: 1280px){
-        position: absolute;
-        display: grid;
-        grid-template-columns: repeat(4, 4fr);
-        width: 400px;
-        height: 500px;
-        background: #fff;
-        border: 1px solid #006432;
-        box-sizing: border-box;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 25px;
-        top: 105%;
-        left: -5%;
+        @media only screen and (max-width: 1366px){
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(4, 4fr);
+            width: 400px;
+            height: 500px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 105%;
+            left: -5%;  
         }
-        position: absolute;
-        display: grid;
-        grid-template-columns: repeat(4, 4fr);
-        width: 400px;
-        height: 500px;
-        background: #fff;
-        border: 1px solid #006432;
-        box-sizing: border-box;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 25px;
-        top: 28%;
-        left: 46%;
+                position: absolute;
+                display: grid;
+                grid-template-columns: repeat(4, 4fr);
+                width: 400px;
+                height: 500px;
+                background: #fff;
+                border: 1px solid #006432;
+                box-sizing: border-box;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 25px;
+                top: 28%;
+                left: 46%;
     }
 
     .setError {
@@ -589,7 +675,6 @@ export default createGlobalStyle`
         font-weight: 500;
         font-size: 20px;
         color: #0010c4;
-
     }
 
     .setError2 {
@@ -599,7 +684,6 @@ export default createGlobalStyle`
         font-weight: 500;
         font-size: 20px;
         color: #ff0000;
-
     }
 
     .login-label {
@@ -665,18 +749,18 @@ export default createGlobalStyle`
         top: 28%;
         left: 43%;
         }
-        position: absolute;
-        display: grid;
-        grid-template-columns: repeat(6, 150px);
-        width: 900px;
-        height: 500px;
-        background: #fff;
-        border: 1px solid #006432;
-        box-sizing: border-box;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 25px;
-        top: 28%;
-        left: 45%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(6, 150px);
+            width: 900px;
+            height: 500px;
+            background: #fff;
+            border: 1px solid #006432;
+            box-sizing: border-box;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            top: 28%;
+            left: 45%;
     }
 
     .cad-label {
@@ -731,6 +815,7 @@ export default createGlobalStyle`
     .menu-button:hover {
         background: #006432;
     }
+
     input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
         color: #fff;
         position: relative;
@@ -751,51 +836,48 @@ export default createGlobalStyle`
         padding: 2px;
         color:#000;
         left: 26px;
-      }
-      
+      }      
       
       input[type="date"]::-webkit-datetime-edit-day-field{
         position: absolute !important;
         color:#000;
         padding: 2px;
-        left: 4px;
-        
+        left: 4px;        
       }
 
       .sucesso-control{
-           @media only screen and (max-width: 1280px){
-            position: absolute;
-            top: 80%;
-            left: 650px;
-            font-weight: 500;
-            font-size: 20px;
-            color: #0010c4; 
-           }
+        @media only screen and (max-width: 1280px){
         position: absolute;
-        top: 79%;
-        margin-left: 650px;
+        top: 80%;
+        left: 650px;
         font-weight: 500;
         font-size: 20px;
-        color: #0010c4;
-
+        color: #0010c4; 
+           }
+            position: absolute;
+            top: 79%;
+            margin-left: 650px;
+            font-weight: 500;
+            font-size: 20px;
+            color: #0010c4;           
       }
 
       .error-control{
-           @media only screen and (max-width: 1280px){
-            position: absolute;
-            top: 80%;
-            left: 650px;
-            font-weight: 500;
-            font-size: 20px;
-            color: #ff0000;
-           }
+        @media only screen and (max-width: 1280px){
         position: absolute;
-        top: 79%;
-        margin-left: 650px;
+        top: 80%;
+        left: 650px;
         font-weight: 500;
         font-size: 20px;
         color: #ff0000;
-      }
+           }
+            position: absolute;
+            top: 79%;
+            margin-left: 650px;
+            font-weight: 500;
+            font-size: 20px;
+            color: #ff0000;
+      
 //}
 
 `;

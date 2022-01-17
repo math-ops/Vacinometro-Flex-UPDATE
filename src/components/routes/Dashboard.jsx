@@ -11,20 +11,22 @@ export default function Vacineflex() {
     const [total_primeira_dose, setTotal_primeira_dose] = useState(0);
     const [total_segunda_dose, setTotal_segunda_dose] = useState(0);
     const [total_dose_unica, setTotal_dose_unica] = useState(0);
-    const [total_alimentos_arrecadados, setTotal_alimentos_arrecadados] = useState(0);
+    // const [total_alimentos_arrecadados, setTotal_alimentos_arrecadados] = useState(0);
     const [valorPercentual, setValorPercentual] = useState(0);
+    const [total_dose_reforco, setTotal_dose_reforco] = useState(0);
 
     useEffect(() => {
 
         axios.get("vacinometro")
             .then((res) => {
                 const { colaboradores_elegiveis,
-                    total_alimentos_arrecadados,
+                    // total_alimentos_arrecadados,
                     total_dose_unica,
                     total_doses_aplicadas,
                     total_primeira_dose,
                     total_segunda_dose,
                     percentual,
+                    total_dose_reforco,
                 } = res.data[0];
 
                 setColaboradoresVacinados(total_doses_aplicadas);
@@ -32,8 +34,9 @@ export default function Vacineflex() {
                 setTotal_primeira_dose(total_primeira_dose);
                 setTotal_segunda_dose(total_segunda_dose);
                 setTotal_dose_unica(total_dose_unica);
-                setTotal_alimentos_arrecadados(total_alimentos_arrecadados);
+                // setTotal_alimentos_arrecadados(total_alimentos_arrecadados);
                 setValorPercentual(percentual);
+                setTotal_dose_reforco(total_dose_reforco);
             });
 
         const intervalId = setInterval(() => {
@@ -41,11 +44,12 @@ export default function Vacineflex() {
             axios.get("vacinometro")
                 .then((res) => {
                     const { colaboradores_elegiveis,
-                        total_alimentos_arrecadados,
+                        // total_alimentos_arrecadados,
                         total_dose_unica,
                         total_doses_aplicadas,
                         total_primeira_dose,
                         total_segunda_dose,
+                        total_dose_reforco,
                         percentual
                     } = res.data[0];
 
@@ -54,7 +58,8 @@ export default function Vacineflex() {
                     setTotal_primeira_dose(total_primeira_dose);
                     setTotal_segunda_dose(total_segunda_dose);
                     setTotal_dose_unica(total_dose_unica);
-                    setTotal_alimentos_arrecadados(total_alimentos_arrecadados);
+                    // setTotal_alimentos_arrecadados(total_alimentos_arrecadados);
+                    setTotal_dose_reforco(total_dose_reforco);
                     setValorPercentual(percentual);
                 });
 
@@ -74,7 +79,8 @@ export default function Vacineflex() {
             <First total_primeira_dose={total_primeira_dose} />
             <Second total_segunda_dose={total_segunda_dose} />
             <Unic total_dose_unica={total_dose_unica} />
-            <Alimentos total_alimentos_arrecadados={total_alimentos_arrecadados} />
+            {/* <Alimentos total_alimentos_arrecadados={total_alimentos_arrecadados} /> */}
+            <Alimentos total_dose_reforco={total_dose_reforco} />
             <Porcentagem valorPercentual={valorPercentual} />
             </div>
         </>
@@ -126,15 +132,15 @@ export function First({ total_primeira_dose }) {
     )
 }
 
-export function Second({ total_segunda_dose }) {
+export function Alimentos({ total_segunda_dose }) {
     return (
         <>
-            <div className="dose-dois">
-                <CardSubtitle>Colaboradores Vacinados com a 2ª Dose:</CardSubtitle>
+            <div className="alimentos">
+            <CardSubtitle>Vacinados com a 2ª Dose:</CardSubtitle>
                 <div className="number">
                     <p><CountUp isCounting end={total_segunda_dose} duration={3.2} /></p>
                     <img src="" alt="" />
-                </div>
+                </div>                
             </div>
         </>
     )
@@ -154,13 +160,13 @@ export function Unic({ total_dose_unica }) {
     )
 }
 
-export function Alimentos({ total_alimentos_arrecadados }) {
+export function Second({ total_dose_reforco }) {
     return (
         <>
-            <div className="alimentos">
-                <CardSubtitle>Total de alimentos arrecadados:</CardSubtitle>
+            <div className="dose-dois">
+            <CardSubtitle>Vacinados com a Dose de Reforço:</CardSubtitle>
                 <div className="number">
-                    <p><CountUp isCounting end={total_alimentos_arrecadados} duration={3.2} /></p>
+                    <p><CountUp isCounting end={total_dose_reforco} duration={3.2} /></p>
                     <img src="" alt="" />
                 </div>
             </div>
@@ -172,7 +178,7 @@ export function Porcentagem({ valorPercentual }) {
     return (
         <>
             <div className="porcento">
-                <CardSubtitle>Porcentagem de Vacinados:</CardSubtitle>
+                <CardSubtitle>Totalmente Vacinados:</CardSubtitle>
                 <div className="number">
                     <p><CountUp isCounting end={valorPercentual} duration={3.2} />%</p>
                     <img src="" alt="" />
@@ -181,3 +187,17 @@ export function Porcentagem({ valorPercentual }) {
         </>
     )
 }
+
+// export function Alimentos({ total_alimentos_arrecadados }) {
+//     return (
+//         <>
+//             <div className="alimentos">
+//                 <CardSubtitle>Total de alimentos arrecadados:</CardSubtitle>
+//                 <div className="number">
+//                     <p><CountUp isCounting end={total_alimentos_arrecadados} duration={3.2} /></p>
+//                     <img src="" alt="" />
+//                 </div>
+//             </div>
+//         </>
+//     )
+// }

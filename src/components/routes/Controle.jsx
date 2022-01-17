@@ -22,9 +22,6 @@ export default function Controle() {
 
   return (
     <>
-      <div className="menu-title controle">
-        <OptionSubtitle>Controle de Colaboradores Vacinados</OptionSubtitle>
-      </div>
       <FormControle />
 
     </>
@@ -285,8 +282,12 @@ export function FormControle() {
 
   return (
     <>
+    <div className="menu-title controle">
+        <OptionSubtitle>Controle de Colaboradores Vacinados</OptionSubtitle>
+      </div>
       <form onSubmit={(e) => handleUpdateColaborador(e.preventDefault())}>
-        <div className="form-controle" >
+        <div className="form-controle-colab" >
+          <div className="form-box">
           <label className="form-label">Colaborador</label>
           <Autocomplete className="form-input"
             id="clear-on-escape"
@@ -304,7 +305,7 @@ export function FormControle() {
               handleBuscarColaborador()
             }
             }
-            style={{ width: 275 }}
+            style={{ width: 700, marginTop: 10 }}
             renderInput={(params) => <TextField {...params} label="Colaborador..." variant="standard"
             />}
           />
@@ -319,7 +320,7 @@ export function FormControle() {
             onChange={(event, newValue) => {
               setIdEmpresa(newValue?.id);
             }}
-            style={{ width: 275 }}
+            style={{ width: 700, marginTop: 10 }}
             renderInput={(params) => <TextField {...params} label="Empresa..." variant="standard" />}
           />
 
@@ -333,7 +334,7 @@ export function FormControle() {
             onChange={(event, newValue) => {
               setIdrisco(newValue?.id);
             }}
-            style={{ width: 275 }}
+            style={{ width: 700, marginTop: 10 }}
             renderInput={(params) => <TextField {...params} label="Risco..." variant="standard" />}
           />
 
@@ -347,26 +348,29 @@ export function FormControle() {
             onChange={(event, newValue) => {
               setIdGruporisco(newValue?.id);
             }}
-            style={{ width: 275 }}
+            style={{ width: 700, marginTop: 10 }}
             renderInput={(params) => <TextField {...params} label="Grupo Risco..." variant="standard"
 
             />}
           />
-
-          <label className="form-label">Primeira Dose</label>
-          <input className="form-input" type="date" name="" id="" placeholder="1º Dose" value={dtPrimeiraDose} onChange={(e) => setDtPrimeiraDose(formatDataCalendar(e.target.valueAsDate))} />
-
           <label className="form-label">Dose Única</label>
           <select className="form-input" type="text" name="" id="" placeholder="Status Primeira Dose" value={statusPrimeiraDose} onChange={(e) => setStatusPrimeiraDose(e.target.value)} >
             <option value="NAO">NÃO</option>
             <option value="UNICA">UNICA</option>
           </select>
 
+          <label className="form-label">Primeira Dose</label>
+          <input className="form-input" type="date" name="" id="" placeholder="1º Dose" value={dtPrimeiraDose} onChange={(e) => setDtPrimeiraDose(formatDataCalendar(e.target.valueAsDate))} />
+
+
           <label className="form-label">Segunda Dose</label>
           <input className="form-input" type="date" name="" id="" placeholder="2º Dose" value={dtSegundaDose} onChange={(e) => setDtSegundaDose(formatDataCalendar(e.target.valueAsDate))} />
 
-          <label className="form-label">Status 2ª Dose</label>
-          <input className="form-input" type="text" name="" id="" placeholder="2ª Dose" value={statusSegundaDose} onChange={(e) => setStatusSegundaDose(e.target.value)} />
+          <label className="form-label">Dose de Reforço</label>
+          <input className="form-input" type="date" name="" id="" placeholder="Dose de Reforço" value={dtSegundaDose} onChange={(e) => setDtSegundaDose(formatDataCalendar(e.target.valueAsDate))} />
+
+          <label className="form-label">Status Dose de Reforço</label>
+          <input className="form-input" type="text" name="" id="" placeholder="Dose de Reforço" value={statusSegundaDose} onChange={(e) => setStatusSegundaDose(e.target.value)} />
 
           <label className="form-label">Agendamento</label>
           <input className="form-input" type="date" name="" id="" data-date-format="DD MMMM YYYY" placeholder="Data Agendamento" value={dtAgendamento} onChange={(e) => setDtAgendamento(formatDataCalendar(e.target.valueAsDate))} />
@@ -387,6 +391,7 @@ export function FormControle() {
           <strong className="sucesso-control">{msgSucess}</strong>
           <strong className="error-control">{msgFail}</strong>
 
+        </div>
         </div>
       </form>
 
